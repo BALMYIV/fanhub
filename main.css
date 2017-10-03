@@ -3,6 +3,7 @@
 }
 
 body {
+	background: #D1BCE3;
 	font-family: 'Playfair Display', serif;
 	font-size: 18px;
 }
@@ -59,13 +60,15 @@ h2 {
 
 header {
 	background-image: url("assets/img/light.jpg");
-	background-size: 100% 350px;
+	background-size: 50% 200px;
+	background-position: center;
   background-repeat: no-repeat;
   /*filter: grayscale(100%);*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 350px;
+	width: 100%;
 }
 
 .search-bar {
@@ -78,10 +81,18 @@ header {
 
 #search {
 	width: 60%;
+	margin: 0;
 	margin-right: 10px;
+	background: #FFF;
 }
 
-#search-btn {}
+.btn {
+	background: #19297C;
+}
+
+.search-result {
+	background: #A1867F;
+}
 
 #search-image {
 	width: 100px;

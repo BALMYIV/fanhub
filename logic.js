@@ -1,3 +1,8 @@
+$(document).ready(function(){
+  // Triggers modal if the searchbar is blank.
+  $('.modal').modal();
+
+
 //DECLARED VARIABLES
 var userInput;
 
@@ -9,11 +14,22 @@ function hamburger(x) {
     location.href = "celeb.html";
 }
 
+//Validates that form is not empty.
+function validateForm() {
+    var x = document.forms["form"]["searchForm"].value;
+    if (x == "") {
+        // alert("Name must be filled out");
+
+        return false;
+    }
+}
+
 //Captures user search query.
 $('#search-btn').on("click", function(event) {
 	event.preventDefault();
 	userInput = $('#search').val();
 	console.log("input: ", userInput);
+	validateForm();
 
 
 //AJAX REQUESTS
@@ -29,7 +45,7 @@ $.ajax({
 		var resultName = response.query.pages[num].title;
 		var resultBio = response.query.pages[num].extract;
 	}
-	console.log('Success!!!');
+	$('<h2>')
 	$('#celeb-name').html(resultName);
 	$('.bio').html(resultBio);
 
@@ -61,7 +77,7 @@ $.ajax({
 		tmName = results.name;
 		tmDate = results.dates.start.localDate;
 
-		var newImg = $('#image').html(`<img id="search-img" src=${tmImg} alt="Image from Ticketmaster">`);
+		var newImg = $('#image').html(`<img id="search-img" src=${tmImg} alt="Image from Ticketmaster" style="width: 280px;">`);
 		var newEvent = $('.events').html(tmDate);
 
   },
@@ -85,7 +101,8 @@ $.ajax({
   error: function(xhr, status, err) {
               // This time, we do not end up here!
            }
-});
+	});
 
 
+	});  
 });
