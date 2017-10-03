@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fan Hub</title>
+	<link href="https://fonts.googleapis.com/css?family=Monoton|Playfair+Display:400,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link rel="stylesheet" href="main.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>	
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<!-- Animated Hamber Menu -->
+			<div class="col s12 menu" onclick="hamburger(this)">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+			<header class="col s12">
+				<h1>Fan Hub</h1>
+			</header>
+		<form class="col s12 search-bar">
+			<input type="text" id="search" placeholder="Enter a celeberity name..."><input type="submit" id="search-btn" value="submit" class="waves-effect waves-light btn">
+		</form>
+		<div class="col s12 search-result"></div>
+			<div class="title col s12"><h2 id="celeb-name"></h2></div>
+			<div class="col s3" id="image"></div>
+			<section class="col s9 bio">
+				Bio
+			</section>
+		<section class="col s12 events"></section>
+	</div>
+	</div>
+<script src="logic.js"></script>
+</body>
+</html>
