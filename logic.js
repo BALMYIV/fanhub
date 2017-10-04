@@ -77,7 +77,7 @@ $.ajax({
 		tmName = results.name;
 		tmDate = results.dates.start.localDate;
 
-		var newImg = $('#image').html(`<img id="search-img" src=${tmImg} alt="Image from Ticketmaster" style="width: 280px;">`);
+		var newImg = $('#image').html(`<img id="search-img" src=${tmImg} alt="Image from Ticketmaster">`);
 		var newEvent = $('.events').html(tmDate);
 
   },
@@ -106,3 +106,5 @@ $.ajax({
 
 	});  
 });
+
+$("#showfav").sideNav();
