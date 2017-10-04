@@ -1,6 +1,30 @@
+var modal = document.getElementById("modal1");
+
 $(document).ready(function(){
-  // Triggers modal if the searchbar is blank.
-  $('.modal').modal();
+	// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+	$('.modal-trigger').on("click", function() {
+
+			console.log($(this).val());
+			if ($("#search").val().trim() === "") {
+				modalshow(1);
+			}
+			else {
+				modalshow(0);
+			}
+	});
+});
+
+$('.modal-close').on('click', function() {
+	modalshow(0);
+});
+
+function modalshow(x) {
+	if (x === 1) {
+	modal.style.display = "block";
+} else if (x === 0) {
+	modal.style.display = "none";
+	}
+}
 
 
 //DECLARED VARIABLES
@@ -14,22 +38,15 @@ function hamburger(x) {
     location.href = "celeb.html";
 }
 
-//Validates that form is not empty.
-function validateForm() {
-    var x = document.forms["form"]["searchForm"].value;
-    if (x == "") {
-        // alert("Name must be filled out");
-
-        return false;
-    }
-}
-
-//Captures user search query.
+// Captures user search query.
 $('#search-btn').on("click", function(event) {
 	event.preventDefault();
 	userInput = $('#search').val();
 	console.log("input: ", userInput);
-	validateForm();
+
+});
+    
+
 
 
 //AJAX REQUESTS
@@ -102,7 +119,3 @@ $.ajax({
               // This time, we do not end up here!
            }
 	});
-
-
-	});  
-});
