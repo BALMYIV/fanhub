@@ -98,3 +98,18 @@ header {
 	width: 100px;
 	height: auto;
 }
+
+#modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 0; /* Location of the box */
+    left: 0;
+    top: 50px;
+    width: 50%; /* Full width */
+    /*height: 100%;  Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #FFF; /* Fallback color */
+    background-color: #FFF; /* Black w/ opacity */
+    text-align: center;
+}
