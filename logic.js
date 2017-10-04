@@ -256,3 +256,9 @@ function addToFav(i) {
 
 
 }
+
+function addFavtoScreen () {
+
+
+
+}
