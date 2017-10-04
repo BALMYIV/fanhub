@@ -69,6 +69,7 @@ $('.modal-trigger').on("click", function() {
     }
     else {
         $(".addedrow").remove();
+        $(".profimg").remove();
         // displays the results
         $(".search-result").css("display", "block");
         modalshow(0);
