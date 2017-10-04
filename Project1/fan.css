@@ -90,6 +90,8 @@ header {
 .favSection {
     display: none;
     background: lightgoldenrodyellow;
+    border: solid 2px black;
+    margin-bottom: 50px;
 }
 
 .search-bar {

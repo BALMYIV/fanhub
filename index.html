@@ -5,58 +5,69 @@
 	<title>Fan Hub</title>
 	<link href="https://fonts.googleapis.com/css?family=Monoton|Playfair+Display:400,900" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="fan.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<!-- Animated Hamber Menu -->
-			<div class="col s12 menu" onclick="hamburger(this)">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
-			</div>
-			<header class="col s12">
-				<h1>Fan Hub</h1>
-			</header>
+<div class="container">
+	<div class="row">
+		<!-- Animated Hamber Menu -->
+		<div class="col s12 menu" onclick="hamburger(this)">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
 		</div>
+		<header class="col s12">
+			<h1>Fan Hub</h1>
+		</header>
+		<form name="form" class="col s12 search-bar">
+			<input name="searchForm" type="text" id="search" placeholder="Enter a celeberity name...">
+			<!-- <button data-target="modal1" class="btn modal-trigger">Modal</button> -->
+			<input type="submit" id="search-btn" value="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1">
+		</form>
 
-		<div class="row">
-			<form name="form" class="col s12 search-bar">
-				<input name="searchForm" type="text" id="search" placeholder="Enter a celeberity name...">
-				<!-- <button data-target="modal1" class="btn modal-trigger">Modal</button> -->
-				<input type="submit" id="search-btn" value="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1">
-			</form>
-		</div>
-		<div class="row">
-			<div class="col s1">
-				//favorites
-			</div>
-			<div class="col s11 search-result">
-				<div class="row">
-					<div class="title col s12"><h2 id="celeb-name"></h2></div>
-				</div>
-				<div class="row">
-					<div class="col s3" id="image"></div>
-					<section class="col s9 bio"></section>
-
-					<section class="col s12 events"></section>
-				</div>
-			</div>
+		<div class="col s12 search-result">
+			<div class="title col s12"><h2 id="celeb-name"></h2></div>
+			<div class="col s3" id="image"></div>
+			<section class="col s9 bio"></section>
+			<table id="events">
+				<tr><th><h5>Closes Event to You!</h5></th></tr>
+				<tr>
+					<th>Venue Img</th>
+					<th>Venue Name</th>
+					<th>Event Date</th>
+					<th>Venue Address</th>
+					<th>Venue Location</th>
+				</tr>
+			</table>
 		</div>
 	</div>
-	  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <p>Please enter a search term before submitting.</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-<!--<script src="logic.js"></script>-->
-	<script src="../Project%201(RachelBill)/test1.js"></script>
+	<div id="favheader">Favorites!</div>
+	<div class="row favSection">
+		<div class="col s12">
+			<table id="favorites">
+				<tr>
+					<th>Venue Img</th>
+					<th>Venue Name</th>
+					<th>Event Date</th>
+					<th>Venue Address</th>
+					<th>Venue Location</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+	<div class="modal-content">
+		<p>Please enter a search term before submitting.</p>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Ok</a>
+	</div>
+</div>
+<script src="playing.js"></script>
 </body>
 </html>
