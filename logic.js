@@ -24,7 +24,7 @@ while (localStorage.getItem(("fav" +j)) != null) {
     var newfav = $("<tr class='favrow'>");
     newfav.append("<td><a href=" + dataset.tktmtr + " target='_blank'><img id='search-img' src=" + dataset.imgsrc + " alt='Image from Ticketmaster' style='width: 280px;'></a></td>");
     newfav.append("<td>" + dataset.date + "</td>");
-    newfav .append("<td>" + dataset.venue + "</td>");
+    newfav.append("<td>" + dataset.venue + "</td>");
     newfav.append("<td>" + dataset.addy + "</td>");
     newfav.append("<td>" + dataset.citystate +" </td>");
 
@@ -59,7 +59,6 @@ $(document).on("click", "#favheader", function () {
 })
 
 
-//DECLARED VARIABLES
 $('.modal-trigger').on("click", function() {
     event.preventDefault();
 
@@ -74,10 +73,9 @@ $('.modal-trigger').on("click", function() {
         $(".search-result").css("display", "block");
         modalshow(0);
         userInput = $('#search').val();
-        //console.log("input: ", userInput);
 
-//   AJAX REQUESTS
-//   //WIKIPEDIA - BIOs
+// AJAX REQUESTS
+// WIKIPEDIA - BIOs
 // appending to the page
         var queryURL = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=' + userInput;
 
@@ -95,7 +93,7 @@ $('.modal-trigger').on("click", function() {
             $('.bio').html(resultBio);
 
         }).fail(function(err) {
-//   	//code goes here.....
+//    //code goes here.....
         });
 
         $.getJSON('https://freegeoip.net/json/').done(function(jsonObject){
@@ -147,19 +145,14 @@ $('.modal-trigger').on("click", function() {
                     newEvent.append(newImg);
                     newEvent.append("<tr class='addedrow'><td><button id='fav'>Add Event to Favorites</button></td></tr>");
 
-
-
-
-
                 })
                 .fail(function (){
-                    // : function(xhr, status, err) {
-                    // This time, we do not end up here!
+                    // code goes here
                     console.log('error');
                 });
         });
 
-        var queryURL1 = "http://itunes.apple.com/search?term=" + userInput + "&media=music&country=US&version=2&limit=20&explicit=Y";
+        var queryURL1 = "https://itunes.apple.com/search?term=" + userInput + "&media=music&country=US&version=2&limit=20&explicit=Y";
 
 //        "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=40e9cece";
 
@@ -179,11 +172,6 @@ $('.modal-trigger').on("click", function() {
             img.attr("class", "profimg");
             img.attr("src", a.results[0].artworkUrl100);
             $("#image").append(img);
-            // YOUR CODE GOES HERE!!!
-            // for (var i = 0; i < a.results.length; i++) {
-            //     console.log(a.results[i].artistViewUrl);
-            //     console.log(a.results[i].trackCensoredName);
-            // }
         })
         $("#search").val("");
     }
@@ -224,18 +212,6 @@ function modalshow(x) {
     }
 }
 
-
-
-//Animates hamburger menu icon.
-function hamburger(x) {
-    x.classList.toggle("change");
-    location.href = "celeb.html";
-}
-//   Captures user search query.
-$('#search-btn').on("click", function(event) {
-
-});
-
 // Ticketmaster for concerts
 //this automatically pulls the location and specifically the state code for user for use in ticketmaster api call
 
@@ -248,17 +224,10 @@ function addToFav(i) {
     var newfav = $("<tr class='favrow'>");
     newfav.append("<td><a href=" + tktlink + " target='_blank'><img id='search-img' src=" + tmImg+ " alt='Image from Ticketmaster' style='width: 280px;'></a></td>");
     newfav.append("<td>" + tmDate + "</td>");
-    newfav .append("<td>" + venue + "</td>");
+    newfav.append("<td>" + venue + "</td>");
     newfav.append("<td>" + address + "</td>");
     newfav.append("<td>" + city + ", " + stcd +" </td>");
 
     favloc.append(newfav);
-
-
-}
-
-function addFavtoScreen () {
-
-
 
 }
