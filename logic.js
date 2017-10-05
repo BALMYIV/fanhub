@@ -152,7 +152,7 @@ $('.modal-trigger').on("click", function() {
                 });
         });
 
-        var queryURL1 = "http://itunes.apple.com/search?term=" + userInput + "&media=music&country=US&version=2&limit=20&explicit=Y";
+        var queryURL1 = "https://itunes.apple.com/search?term=" + userInput + "&media=music&country=US&version=2&limit=20&explicit=Y";
 
 //        "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=40e9cece";
 
